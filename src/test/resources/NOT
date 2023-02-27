@@ -1,0 +1,57 @@
+*****CUCUMBER KURULUMU*****
+-Cucumber Page Object Model için oluşturduğumuz klasörler :
+     pages --> page objectler için kullanılır
+     runners --> test caseleri run etmek, raporlar eklemek, feature file ile step definitionsları birleştirmek için kullanılır
+     stepdefinitions --> java kodları
+     utilities --> reusable methodlar , driver, ConfigReader ...
+
+-Cucumber feature klasörü:
+     Tüm feature file'lar o klasöre gider
+     Tüm test case'ler gherken dilinde bu klasörde yazılır.
+
+--------- 19.02.2023 DAY 2 ---------------
+1. Feature file oluştur: ilkfeaturefile.feature
+    Feature: ilk feature file
+
+      Scenario: TC01_google_iphone_arama
+
+      Given kullanici google gider
+      When kullanici iphone icin arama yapar
+      Then sonuclarda iphone oldugunu dogrular
+
+2. Runner class ı run et
+3. Consoldan missing step definitions'ları kopyala
+4. stepdefinitions klasöründe GoogleStepDefinitions oluştur ve kopyaladığımız şeyleri yapıştır
+
+         @Given("kullanici google gider")
+         public void kullanici_google_gider() {
+
+         }
+         @When("kullanici iphone icin arama yapar")
+         public void kullanici_iphone_icin_arama_yapar() {
+
+         }
+         @Then("sonuclarda iphone oldugunu dogrular")
+         public void sonuclarda_iphone_oldugunu_dogrular() {
+
+         }
+5. stepdefinitionslara gerekli java kodlarını yaz
+          @Given("kullanici google gider")
+             public void kullanici_google_gider() {
+                 Driver.getDriver().get(ConfigReader.getProperty("google_url"));
+          }
+     NOTE: Elementleri bulmak için page paketini kullan
+
+
+     NOOTT
+     #CUCUMBER'DAKİ OTOMASYON ADIMLARI NELERDİR?
+     #1-Feature File : Gherkin language ile test senaryolarını oluşturur.Test caseleri feature file da yazarız
+     #2-Runner Package oluştur : @RunWith(Cucumber.class)  - @CucumberOptions(.....) - tags="@tagname")
+                          Feature file'ları run etmek için çalıştırırız
+     #3-Stepdefinitions package oluştur: Çalıştırdığımız java kodlarını konsoldan alıp stepdefinitions packkage'e koyarız
+     #4-java kodlarını tamamla
+
+     UndefinedStepException : Bu hata mesajı tanımlanmamış eksik kod olduğunda konsolda çıkar.
+                              harf harf satır satır aynı olmak zorundadır.yoksa exception çıkar
+     NOT: Bu şekilde yeni step definitionlar beklendiğinde,zamandan tasarruf sağlamak için runnerda dryRun=true kullanılır
+           dryRun= Run browserı açmaz zamandan tasarruf sağlar sadece kodlarda eksik var mı diye bakar çok kısa sürer
