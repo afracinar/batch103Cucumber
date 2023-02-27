@@ -40,3 +40,5 @@ Feature: ilk feature file
 #                   Kodlarımızı browser da çalıştırmak istediğimizde dryRun=false a çevirmemiz lazım
 # Without Parameter : Kodlarımızı parametreli ve dinamik hale getirmek için feature file da değişken olarak kullanacağımız kelimeyi "" çift tırnak içine alırız
 #                     parametreler datalar için kullanılır
+#12.Scenario Ouline : Aynı senaryoyu farklı değerlerle tekrar tekrar run etmek için kullanılır.Mesela senaryo google arama yapmak
+#                    birinde iphone aratırıyorsun ,birinde tesla,birinde water...

@@ -40,3 +40,10 @@ Feature: ilk feature file
 #                   Kodlarımızı browser da çalıştırmak istediğimizde dryRun=false a çevirmemiz lazım
 # Without Parameter : Kodlarımızı parametreli ve dinamik hale getirmek için feature file da değişken olarak kullanacağımız kelimeyi "" çift tırnak içine alırız
 #                     parametreler datalar için kullanılır
+#12.Scenario Ouline : Aynı senaryoyu farklı değerlerle tekrar tekrar run etmek için kullanılır.Mesela senaryo google arama yapmak
+#                    birinde iphone aratırıyorsun ,birinde tesla,birinde water...
+ #Scenario Outline'ı niçin kullanırız?
+  #  1. Tekrar tekrar kullanılan reusable test stepleri oluşturmak için
+  #  2. Birden fazla veri ile test case yapmak için
+  #  3. Feature file ı kısa hale getirmek için.Birden fazla Scenario yerine tek bir Scenario Outline kullanılır
+  #  4. Scenario Outline aynı scenario'yu farklı verilerle test etmek için kullanılır

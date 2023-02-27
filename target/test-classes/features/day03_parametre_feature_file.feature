@@ -29,5 +29,5 @@ Feature: arama_feature
 
   Scenario: TC04_google_skateboard_arama
     When kullanici "skateboard" icin arama yapar
-    Then sonuclarin "iskateboard" icerdigini dogrula
-    Then close the applicati  on
+    Then sonuclarin "skateboard" icerdigini dogrula
+    Then close the application

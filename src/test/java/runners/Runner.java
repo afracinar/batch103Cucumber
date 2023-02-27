@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "./src/test/resources/features",//features folder path
         glue = "stepdefinitions" ,//stepdefinitions path
-        tags = "@parametre",
+        tags = "@scenario_outline_1",
         dryRun = false
 )
 
