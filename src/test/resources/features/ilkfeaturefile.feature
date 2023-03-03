@@ -19,7 +19,7 @@ Feature: ilk feature file
     Then close the application
 
 # 1. Her feature file, "Feature:" kelimesi ile başlamak zorundadır
-# 2. Her bil file da, yalnız bir "Feature:" kullanılabilir
+# 2. Her bir file da, yalnız bir "Feature:" kullanılabilir
 #    Gherkin dili ile test senaryolarını oluştururz
 # 3. Senaryo (TEST CASE) oluşturmak için "Scenario" kelimesi kullanılır
 # 4. Birden fazla Scenari: kullanılabilir

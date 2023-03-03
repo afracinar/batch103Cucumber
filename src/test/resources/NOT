@@ -55,3 +55,59 @@
                               harf harf satır satır aynı olmak zorundadır.yoksa exception çıkar
      NOT: Bu şekilde yeni step definitionlar beklendiğinde,zamandan tasarruf sağlamak için runnerda dryRun=true kullanılır
            dryRun= Run browserı açmaz zamandan tasarruf sağlar sadece kodlarda eksik var mı diye bakar çok kısa sürer
+
+
+-------------SCENARIO OUTLINE(aynı senaryo farklı datalar olduğunda kullanılır)-------------
+      #Scenario: -> Scenario Outline: a dönüşüyor
+      #"" -> "<sutun_ismi>" ne dönüşüyor
+      #Examples kelimesi Scenario Outline'dan sonra kullanılmalı.
+      #Example verilerin kullanıldığı yerdir
+      #Scenario Outline data driven testing için kullanılır
+      #yani benzer senaryoyu tekrar tekrar farklı datalarla çalıştırmak için kullanılır
+      #Scenario Outline cucumber'da çok önemlidir.
+      #Ne zaman birden fazla data ile işlem yaparsak o zaman scenario outline kullanabiliriz.
+      #Scenario Outline Excel ile automasyon yapmaya benzer tek fark kullanımı daha kolaydır
+
+--------------Hangi raporları kullaırsın?----------
+daha okunaklı olduğu için html raporlarını kullanırım.
+json okunması daha zordur ama kullanılabilir.daha çok developerların data çekmek için kullandığı raporlardır
+
+-------------DATA TABLES-----------------
+Scenario Outline kadar tercih edilmez.
+
+---SCENARIO OUTLİNE----
+Scenario Outline ile DDT yapılır.Scenario Outline iyi bilinmelidir.
+Test adımlarını (steps) data reusable yapmak için kullanılır
+en çok kullanılan cucumber özelliklerinden biridir.
+Examples kelimesi veri girişleri için kullanılmalıdır
+Stepdefinitionslardaki data tipi STRING'dir
+Examples kelimesi en sonda kullanılır
+
+----DATA TABLES----
+Data Tables ile DDT yapılabilir
+Test adımlarını (steps) data reusable yapmak için kullanılır
+Scenario Outline ile yaygın değildir.
+Examples kelimesi kullanılmaz
+Stepdefinitionslardaki data tipi DATATABLE'dir
+DataTable'lar ara adımlarda (steps) kullanılabilir
+
+NOT: Datatables ve Scenario Outline birlikte kullanılabilir
+
+---COLLECTIONS NEDİR?
+list,set,queue
+---COLLECTIONS'LARI FRAMWORK'ÜNDE NASIL KULLANDIN?
+collections'ları özellikle çoklu data ihtiyacımız olduğunda kullanırız.örneğin findElements methodu kullanıldığında birden
+fazla element beklediğim için List<Webelement> kullanırız ya da çoklu pencere geçişlerinde getWindowHandles ile Set kullanırız.
+Droğdown'daki tüö elementleri getOptions metot ile aldığımda List<WebElement> e koyarız.Framwork'ümüzde bazı utility
+class'lar kullanıyoruz.Bunların içinde çok sayıda collections kullanıyoruz
+Cucumber'da DataTables kullandığımda gelen verileri List ya da Map'te depolayabiliriz.
+
+//CUCUMBER DAKİ RAPORLARI CLOUD A EKLEME
+1. resources dosyasinin altında cucumber properties dosyası olustur : cucumber.properties
+2. Su kodu ekle: cucumber.publish.enabled=true
+3. Testi calistir. Bu sekilde cucumber html raporu cloud yuklenecektir. Fakat GitHub ile girls yapilmassa 24 saat icinde silinecektir. Bu yüzden GitHub ile giriş yapalım.
+4. Login with GitHub a tikla > Authorize SmartBear
+5. Create Collection
+6. Tokeni cucumber.properties e ekle
+7. Testi tekrar calistir. Collections klasorunde raporlar olusucakdir.
+

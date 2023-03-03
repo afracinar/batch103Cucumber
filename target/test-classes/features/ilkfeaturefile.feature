@@ -19,7 +19,7 @@ Feature: ilk feature file
     Then close the application
 
 # 1. Her feature file, "Feature:" kelimesi ile başlamak zorundadır
-# 2. Her bil file da, yalnız bir "Feature:" kullanılabilir
+# 2. Her bir file da, yalnız bir "Feature:" kullanılabilir
 #    Gherkin dili ile test senaryolarını oluştururz
 # 3. Senaryo (TEST CASE) oluşturmak için "Scenario" kelimesi kullanılır
 # 4. Birden fazla Scenari: kullanılabilir
@@ -42,3 +42,8 @@ Feature: ilk feature file
 #                     parametreler datalar için kullanılır
 #12.Scenario Ouline : Aynı senaryoyu farklı değerlerle tekrar tekrar run etmek için kullanılır.Mesela senaryo google arama yapmak
 #                    birinde iphone aratırıyorsun ,birinde tesla,birinde water...
+ #Scenario Outline'ı niçin kullanırız?
+  #  1. Tekrar tekrar kullanılan reusable test stepleri oluşturmak için
+  #  2. Birden fazla veri ile test case yapmak için
+  #  3. Feature file ı kısa hale getirmek için.Birden fazla Scenario yerine tek bir Scenario Outline kullanılır
+  #  4. Scenario Outline aynı scenario'yu farklı verilerle test etmek için kullanılır
